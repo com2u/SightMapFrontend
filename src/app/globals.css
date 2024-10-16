@@ -1,0 +1,24 @@
+body {
+  margin: 0px;
+}
+
+.leaflet-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.leaflet-marker-icon {
+  border-radius: 100%;
+}
+
+.input {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 400;
+  top: 30px;
+  width: 400px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid blue;
+}
