@@ -1,0 +1,349 @@
+
+> maps-app@0.1.0 docker:build
+> docker compose build
+
+#0 building with "default" instance using docker driver
+
+#1 [maps-app internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.22kB done
+#1 DONE 0.3s
+
+#2 [maps-app internal] load metadata for docker.io/library/node:18-alpine
+#2 DONE 1.6s
+
+#3 [maps-app internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 122B done
+#3 DONE 0.7s
+
+#4 [maps-app base 1/1] FROM docker.io/library/node:18-alpine@sha256:02376a266c84acbf45bd19440e08e48b1c8b98037417334046029ab585de03e2
+#4 DONE 0.0s
+
+#5 [maps-app builder 1/4] WORKDIR /app
+#5 CACHED
+
+#6 [maps-app runner 2/8] RUN addgroup --system --gid 1001 nodejs
+#6 CACHED
+
+#7 [maps-app runner 3/8] RUN adduser --system --uid 1001 nextjs
+#7 CACHED
+
+#8 [maps-app internal] load build context
+#8 transferring context: 8.39kB done
+#8 DONE 0.5s
+
+#9 [maps-app deps 4/4] RUN     if [ -f yarn.lock ]; then yarn --frozen-lockfile;     elif [ -f package-lock.json ]; then npm ci;     elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile;     else echo "Lockfile not found." && exit 1;     fi
+#9 CACHED
+
+#10 [maps-app deps 1/4] RUN apk add --no-cache libc6-compat
+#10 CACHED
+
+#11 [maps-app deps 2/4] WORKDIR /app
+#11 CACHED
+
+#12 [maps-app deps 3/4] COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+#12 CACHED
+
+#13 [maps-app builder 2/4] COPY --from=deps /app/node_modules ./node_modules
+#13 CACHED
+
+#14 [maps-app builder 3/4] COPY . .
+#14 DONE 2.6s
+
+#15 [maps-app builder 4/4] RUN yarn build
+#15 2.514 yarn run v1.22.19
+#15 2.551 $ next build
+#15 3.572 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+#15 3.572 This information is used to shape Next.js' roadmap and prioritize features.
+#15 3.572 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#15 3.573 https://nextjs.org/telemetry
+#15 3.573 
+#15 3.895    ▲ Next.js 14.1.0
+#15 3.895    - Environments: .env
+#15 3.896 
+#15 4.089    Creating an optimized production build ...
+#15 7.632 Browserslist: caniuse-lite is outdated. Please run:
+#15 7.632   npx update-browserslist-db@latest
+#15 7.632   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+#15 11.27  ⚠ For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.
+#15 11.27 Read more: https://nextjs.org/docs/messages/sharp-missing-in-production
+#15 25.28 Compiler server unexpectedly exited with code: null and signal: SIGTERM
+#15 30.14 Browserslist: caniuse-lite is outdated. Please run:
+#15 30.14   npx update-browserslist-db@latest
+#15 30.14   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+#15 32.35  ⚠ For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.
+#15 32.35 Read more: https://nextjs.org/docs/messages/sharp-missing-in-production
+#15 41.32 Compiler client unexpectedly exited with code: null and signal: SIGTERM
+#15 41.32  ✓ Compiled successfully
+#15 41.32    Linting and checking validity of types ...
+#15 44.89 
+#15 44.89 ./src/components/Filter.tsx
+#15 44.89 38:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 38:11  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+#15 44.89 54:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 
+#15 44.89 ./src/components/Fliker.tsx
+#15 44.89 85:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 
+#15 44.89 ./src/components/MarkerCluster.tsx
+#15 44.89 44:6  Warning: React Hook useMemo has missing dependencies: 'locations' and 'map'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+#15 44.89 
+#15 44.89 ./src/components/Popup.tsx
+#15 44.89 46:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 50:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 85:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 85:19  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+#15 44.89 97:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 97:21  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+#15 44.89 131:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+#15 44.89 
+#15 44.89 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+#15 47.40    Collecting page data ...
+#15 50.47    Generating static pages (0/5) ...
+#15 51.33    Generating static pages (1/5) 
+#15 51.34    Generating static pages (2/5) 
+#15 51.61    Generating static pages (3/5) 
+#15 52.11 e [ApolloError]: Response not successful: Received status code 500
+#15 52.11     at new e (/app/.next/server/app/page.js:42:24140)
+#15 52.11     at /app/.next/server/app/page.js:42:91528
+#15 52.11     at o (/app/.next/server/app/page.js:42:53313)
+#15 52.11     at /app/.next/server/app/page.js:42:53228
+#15 52.11     at new Promise (<anonymous>)
+#15 52.11     at Object.then (/app/.next/server/app/page.js:42:53195)
+#15 52.11     at Object.error (/app/.next/server/app/page.js:42:53323)
+#15 52.11     at tq (/app/.next/server/app/page.js:42:3536)
+#15 52.11     at tY (/app/.next/server/app/page.js:42:4043)
+#15 52.11     at e.error (/app/.next/server/app/page.js:42:4604) {
+#15 52.11   graphQLErrors: [],
+#15 52.11   protocolErrors: [],
+#15 52.11   clientErrors: [],
+#15 52.11   networkError: Error [ServerError]: Response not successful: Received status code 500
+#15 52.11       at eY (/app/.next/server/app/page.js:42:23684)
+#15 52.11       at e5 (/app/.next/server/app/page.js:42:25661)
+#15 52.11       at /app/.next/server/app/page.js:42:42518
+#15 52.11       at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+#15 52.11     response: Response {
+#15 52.11       [Symbol(realm)]: null,
+#15 52.11       [Symbol(state)]: [Object],
+#15 52.11       [Symbol(headers)]: [HeadersList]
+#15 52.11     },
+#15 52.11     statusCode: 500,
+#15 52.11     result: '<!DOCTYPE html>\n' +
+#15 52.11       '<html>\n' +
+#15 52.11       '  <head>\n' +
+#15 52.11       '    <title>Project not reachable | Hasura</title>\n' +
+#15 52.11       '    <meta charSet="utf-8" />\n' +
+#15 52.11       '    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>\n' +
+#15 52.11       '    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">\n' +
+#15 52.11       '    <style>\n' +
+#15 52.11       '      .mainWrapper {\n' +
+#15 52.11       '        width: 500px;\n' +
+#15 52.11       '        position: fixed;\n' +
+#15 52.11       '        top: 50%;\n' +
+#15 52.11       '        left: 50%;\n' +
+#15 52.11       '        transform: translate(-50%, -50%);\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .brand {\n' +
+#15 52.11       '        padding-bottom: 48px;\n' +
+#15 52.11       '        text-align: center;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .brand img {\n' +
+#15 52.11       '        display: inline-block;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .title {\n' +
+#15 52.11       "        font-family: 'Poppins';\n" +
+#15 52.11       '        font-style: normal;\n' +
+#15 52.11       '        font-weight: normal;\n' +
+#15 52.11       '        font-size: 22px;\n' +
+#15 52.11       '        line-height: 33px;\n' +
+#15 52.11       '        text-align: center;\n' +
+#15 52.11       '        color: #F47E7E;\n' +
+#15 52.11       '        padding-bottom: 16px;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .desc {\n' +
+#15 52.11       "        font-family: 'Poppins';\n" +
+#15 52.11       '        font-style: normal;\n' +
+#15 52.11       '        font-weight: normal;\n' +
+#15 52.11       '        font-size: 16px;\n' +
+#15 52.11       '        line-height: 24px;\n' +
+#15 52.11       '        text-align: center;\n' +
+#15 52.11       '        color: #717780;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .desc a {\n' +
+#15 52.11       '        color: #5c94c8;\n' +
+#15 52.11       '        cursor: pointer;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .desc ul li {\n' +
+#15 52.11       '        text-align: left;\n' +
+#15 52.11       '        padding: 2px 0px;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '    </style>\n' +
+#15 52.11       '  </head>\n' +
+#15 52.11       '  <body>\n' +
+#15 52.11       '    <div class="mainWrapper">\n' +
+#15 52.11       '      <div class="brand">\n' +
+#15 52.11       '        <img src="https://graphql-engine-cdn.hasura.io/img/cloud/logo.svg" alt="Hasura logo" />\n' +
+#15 52.11       '      </div>\n' +
+#15 52.11       '      <div class="title">\n' +
+#15 52.11       '        Unable to load this project\n' +
+#15 52.11       '      </div>\n' +
+#15 52.11       '      <div class="desc">\n' +
+#15 52.11       '        It looks like the project you tried to access is not live!\n' +
+#15 52.11       '        <ul>\n' +
+#15 52.11       '          <li>\n' +
+#15 52.11       '            If you have just created this project please wait a few moments before refreshing this page.\n' +
+#15 52.11       '          </li>\n' +
+#15 52.11       '          <li>\n' +
+#15 52.11       `            If you haven't used your project in the last three months, it could have been <a href="https://hasura.io/docs/latest/graphql/cloud/projects/hibernation/">hibernated</a>.\n` +
+#15 52.11       '          </li>\n' +
+#15 52.11       '          <li>\n' +
+#15 52.11       '            Or there can be a configuration error preventing your project to start up.\n' +
+#15 52.11       '          </li>\n' +
+#15 52.11       '        </ul>\n' +
+#15 52.11       '        In any case, check out your <a href="https://cloud.hasura.io/projects" rel="noopener noreferrer" target="_blank">dashboard</a> for more information about the state of your project, or <a href="https://cloud.hasura.io/support/create-ticket" rel="noopener noreferrer" target="_blank">file a ticket</a> for assistance.\n' +
+#15 52.11       '      </div>\n' +
+#15 52.11       '    </div>\n' +
+#15 52.11       '  </body>\n' +
+#15 52.11       '</html>\n'
+#15 52.11   },
+#15 52.11   extraInfo: undefined
+#15 52.11 }
+#15 52.11 e [ApolloError]: Response not successful: Received status code 500
+#15 52.11     at new e (/app/.next/server/app/page.js:42:24140)
+#15 52.11     at /app/.next/server/app/page.js:42:91528
+#15 52.11     at o (/app/.next/server/app/page.js:42:53313)
+#15 52.11     at /app/.next/server/app/page.js:42:53228
+#15 52.11     at new Promise (<anonymous>)
+#15 52.11     at Object.then (/app/.next/server/app/page.js:42:53195)
+#15 52.11     at Object.error (/app/.next/server/app/page.js:42:53323)
+#15 52.11     at tq (/app/.next/server/app/page.js:42:3536)
+#15 52.11     at tY (/app/.next/server/app/page.js:42:4043)
+#15 52.11     at e.error (/app/.next/server/app/page.js:42:4604) {
+#15 52.11   graphQLErrors: [],
+#15 52.11   protocolErrors: [],
+#15 52.11   clientErrors: [],
+#15 52.11   networkError: Error [ServerError]: Response not successful: Received status code 500
+#15 52.11       at eY (/app/.next/server/app/page.js:42:23684)
+#15 52.11       at e5 (/app/.next/server/app/page.js:42:25661)
+#15 52.11       at /app/.next/server/app/page.js:42:42518
+#15 52.11       at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+#15 52.11     response: Response {
+#15 52.11       [Symbol(realm)]: null,
+#15 52.11       [Symbol(state)]: [Object],
+#15 52.11       [Symbol(headers)]: [HeadersList]
+#15 52.11     },
+#15 52.11     statusCode: 500,
+#15 52.11     result: '<!DOCTYPE html>\n' +
+#15 52.11       '<html>\n' +
+#15 52.11       '  <head>\n' +
+#15 52.11       '    <title>Project not reachable | Hasura</title>\n' +
+#15 52.11       '    <meta charSet="utf-8" />\n' +
+#15 52.11       '    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>\n' +
+#15 52.11       '    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">\n' +
+#15 52.11       '    <style>\n' +
+#15 52.11       '      .mainWrapper {\n' +
+#15 52.11       '        width: 500px;\n' +
+#15 52.11       '        position: fixed;\n' +
+#15 52.11       '        top: 50%;\n' +
+#15 52.11       '        left: 50%;\n' +
+#15 52.11       '        transform: translate(-50%, -50%);\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .brand {\n' +
+#15 52.11       '        padding-bottom: 48px;\n' +
+#15 52.11       '        text-align: center;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .brand img {\n' +
+#15 52.11       '        display: inline-block;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .title {\n' +
+#15 52.11       "        font-family: 'Poppins';\n" +
+#15 52.11       '        font-style: normal;\n' +
+#15 52.11       '        font-weight: normal;\n' +
+#15 52.11       '        font-size: 22px;\n' +
+#15 52.11       '        line-height: 33px;\n' +
+#15 52.11       '        text-align: center;\n' +
+#15 52.11       '        color: #F47E7E;\n' +
+#15 52.11       '        padding-bottom: 16px;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .desc {\n' +
+#15 52.11       "        font-family: 'Poppins';\n" +
+#15 52.11       '        font-style: normal;\n' +
+#15 52.11       '        font-weight: normal;\n' +
+#15 52.11       '        font-size: 16px;\n' +
+#15 52.11       '        line-height: 24px;\n' +
+#15 52.11       '        text-align: center;\n' +
+#15 52.11       '        color: #717780;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .desc a {\n' +
+#15 52.11       '        color: #5c94c8;\n' +
+#15 52.11       '        cursor: pointer;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '      .desc ul li {\n' +
+#15 52.11       '        text-align: left;\n' +
+#15 52.11       '        padding: 2px 0px;\n' +
+#15 52.11       '      }\n' +
+#15 52.11       '    </style>\n' +
+#15 52.11       '  </head>\n' +
+#15 52.11       '  <body>\n' +
+#15 52.11       '    <div class="mainWrapper">\n' +
+#15 52.11       '      <div class="brand">\n' +
+#15 52.11       '        <img src="https://graphql-engine-cdn.hasura.io/img/cloud/logo.svg" alt="Hasura logo" />\n' +
+#15 52.11       '      </div>\n' +
+#15 52.11       '      <div class="title">\n' +
+#15 52.11       '        Unable to load this project\n' +
+#15 52.11       '      </div>\n' +
+#15 52.11       '      <div class="desc">\n' +
+#15 52.11       '        It looks like the project you tried to access is not live!\n' +
+#15 52.11       '        <ul>\n' +
+#15 52.11       '          <li>\n' +
+#15 52.11       '            If you have just created this project please wait a few moments before refreshing this page.\n' +
+#15 52.11       '          </li>\n' +
+#15 52.11       '          <li>\n' +
+#15 52.11       `            If you haven't used your project in the last three months, it could have been <a href="https://hasura.io/docs/latest/graphql/cloud/projects/hibernation/">hibernated</a>.\n` +
+#15 52.11       '          </li>\n' +
+#15 52.11       '          <li>\n' +
+#15 52.11       '            Or there can be a configuration error preventing your project to start up.\n' +
+#15 52.11       '          </li>\n' +
+#15 52.11       '        </ul>\n' +
+#15 52.11       '        In any case, check out your <a href="https://cloud.hasura.io/projects" rel="noopener noreferrer" target="_blank">dashboard</a> for more information about the state of your project, or <a href="https://cloud.hasura.io/support/create-ticket" rel="noopener noreferrer" target="_blank">file a ticket</a> for assistance.\n' +
+#15 52.11       '      </div>\n' +
+#15 52.11       '    </div>\n' +
+#15 52.11       '  </body>\n' +
+#15 52.11       '</html>\n'
+#15 52.11   },
+#15 52.11   extraInfo: undefined
+#15 52.11 }
+#15 52.49 
+#15 52.49 Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+#15 52.49 
+#15 52.49 ApolloError: Response not successful: Received status code 500
+#15 52.49     at new e (/app/.next/server/app/page.js:42:24140)
+#15 52.49     at /app/.next/server/app/page.js:42:91528
+#15 52.49     at o (/app/.next/server/app/page.js:42:53313)
+#15 52.49     at /app/.next/server/app/page.js:42:53228
+#15 52.49     at new Promise (<anonymous>)
+#15 52.49     at Object.then (/app/.next/server/app/page.js:42:53195)
+#15 52.49     at Object.error (/app/.next/server/app/page.js:42:53323)
+#15 52.49     at tq (/app/.next/server/app/page.js:42:3536)
+#15 52.49     at tY (/app/.next/server/app/page.js:42:4043)
+#15 52.49     at e.error (/app/.next/server/app/page.js:42:4604)
+#15 52.49  ✓ Generating static pages (5/5) 
+#15 52.51 
+#15 52.51 > Export encountered errors on following paths:
+#15 52.51 	/page: /
+#15 52.56 error Command failed with exit code 1.
+#15 52.56 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+#15 ERROR: process "/bin/sh -c yarn build" did not complete successfully: exit code: 1
+------
+ > [maps-app builder 4/4] RUN yarn build:
+52.49     at Object.error (/app/.next/server/app/page.js:42:53323)
+52.49     at tq (/app/.next/server/app/page.js:42:3536)
+52.49     at tY (/app/.next/server/app/page.js:42:4043)
+52.49     at e.error (/app/.next/server/app/page.js:42:4604)
+52.49  ✓ Generating static pages (5/5) 
+52.51 
+52.51 > Export encountered errors on following paths:
+52.51 	/page: /
+52.56 error Command failed with exit code 1.
+52.56 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+------

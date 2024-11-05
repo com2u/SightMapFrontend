@@ -4,8 +4,8 @@ export interface LocationData {
   city: string;
   state: string;
   type: string;
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
   zoom: number;
   stars: number;
   votes: number;
@@ -37,8 +37,8 @@ export interface FlickrPhoto {
   license: string;
   dateupload: string;
   ownername: string;
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
   accuracy: string;
   context: number;
   place_id: string;

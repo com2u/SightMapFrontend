@@ -37,7 +37,8 @@ const LocationAudio = ({ audio }: Props) => {
         />
       </div>
       <audio id='audioPlayer' controls style={{ display: 'none' }}>
-        <source src={audio} type='audio/mp3' />
+        
+        <source src={"/"+audio} type='audio/mp3' />
         Your browser does not support the audio element.
       </audio>
     </>
